@@ -3,10 +3,10 @@ import express from "express";
 import cors from "cors";
 import passport from "passport";
 
-import { sequelize } from "./app/models";
-import { authRoutes, categoriesRoutes, productsRoutes } from "./app/routes";
-import { errorControllers } from "./app/controllers";
-import passportConfig from "./app/config/passport.config";
+import { sequelize } from "./models";
+import { authRoutes, categoriesRoutes, productsRoutes } from "./routes";
+import { errorControllers } from "./controllers";
+import passportConfig from "./config/passport.config";
 
 process.env.NODE_ENV === "localhost"
   ? dotenv.config({ path: ".env.local" })

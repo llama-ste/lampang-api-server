@@ -1,4 +1,4 @@
-import { IUserAttributes } from "../../app/models/user";
+import { IUserAttributes } from "../../models/user";
 
 declare global {
   namespace Express {
