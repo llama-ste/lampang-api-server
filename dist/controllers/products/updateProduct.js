@@ -57,7 +57,6 @@ var updateProduct = function (req, res, next) { return __awaiter(void 0, void 0,
                     imageUrl: req.body.imageUrl,
                     affiliateUrl: req.body.affiliateUrl,
                 };
-                console.log(updateData);
                 filteredData = Object.fromEntries(Object.entries(updateData).filter(function (v) { return v[1] !== undefined; }));
                 console.log(filteredData);
                 return [4 /*yield*/, product.update(filteredData)];

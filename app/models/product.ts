@@ -6,7 +6,7 @@ import { User } from "./user";
 interface IProductAttributes {
   id: number;
   name: string;
-  price: string;
+  price: number;
   description: string;
   affiliateUrl: string;
   imageUrl: string;

@@ -19,8 +19,6 @@ const updateProduct: RequestHandler = async (req, res, next) => {
       affiliateUrl: req.body.affiliateUrl,
     };
 
-    console.log(updateData);
-
     const filteredData = Object.fromEntries(
       Object.entries(updateData).filter((v) => v[1] !== undefined)
     );
