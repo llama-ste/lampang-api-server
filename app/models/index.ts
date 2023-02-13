@@ -1,5 +1,5 @@
 import { Sequelize } from "sequelize";
-import * as pg from "pg";
+const pg = require("pg");
 
 import dbConfig from "../config/db.config";
 
