@@ -116,13 +116,13 @@ var crawlingAndGetData = function (productUrl) { return __awaiter(void 0, void 0
                 $ = (0, cheerio_1.load)(html);
                 imageUrl = "https:".concat($("div.prod-image .prod-image__detail").attr("src"));
                 name_1 = $("div.prod-buy-header h2.prod-buy-header__title").text();
-                price = $("div.prod-price div.prod-major-price strong")
+                price = $("div.prod-price span.total-price strong")
                     .text()
                     .replace(/[^0-9]/g, "");
                 isInValid = imageUrl.length === 0 || name_1.length === 0 || price.length === 0;
                 if (isInValid)
                     throw new Error("올바른 URL을 보내주세요.");
-                return [2 /*return*/, { imageUrl: imageUrl, name: name_1, price: price }];
+                return [2 /*return*/, { imageUrl: imageUrl, name: name_1, price: Number(price) }];
             case 3:
                 err_2 = _a.sent();
                 throw new Error("".concat(err_2));

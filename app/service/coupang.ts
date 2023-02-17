@@ -53,7 +53,9 @@ export const getAffiliateUrl = async (url: string) => {
       },
       body: JSON.stringify(REQUEST),
     });
+
     const data = await response.json();
+
     const affilateURL = data["data"][0]["shortenUrl"];
 
     return affilateURL;
@@ -77,7 +79,7 @@ export const crawlingAndGetData = async (productUrl: string) => {
       "src"
     )}`;
     const name = $("div.prod-buy-header h2.prod-buy-header__title").text();
-    const price = $("div.prod-price div.prod-major-price strong")
+    const price = $("div.prod-price span.total-price strong")
       .text()
       .replace(/[^0-9]/g, "");
 
@@ -86,7 +88,7 @@ export const crawlingAndGetData = async (productUrl: string) => {
 
     if (isInValid) throw new Error("올바른 URL을 보내주세요.");
 
-    return { imageUrl, name, price };
+    return { imageUrl, name, price: Number(price) };
   } catch (err) {
     throw new Error(`${err}`);
   }
