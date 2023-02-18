@@ -10,13 +10,17 @@
 
 <br/>
 
+### Link: [FE Github](https://github.com/llama-ste/lampang)
+
+<br/>
+
 ## Userflow
 <img src="https://user-images.githubusercontent.com/90495580/205214864-6d50b4ba-7ac7-4e68-8338-7b2f08a2d5f3.png"/>
 
 <br/>
 
 ## Tech Stack
-<b>Frontend(My Role)</b> : React, Recoil, React-query, React-beautiful-dnd, Mui <br/>
+<b>Frontend</b> : React, Recoil, React-query, React-beautiful-dnd, Mui <br/>
 <b>Backend</b> : Express, PostgreSQL(supabase), Sequelize, Passport, Cheerio <br/>
 <b>Infrastructure</b> : Vercel
 
@@ -95,7 +99,8 @@ export default useIntersectionObserver;
 React-beautiful-dnd를 이용하여 Draggable List를 구현하였는데, React18버전에서 애니메이션이 동작하지 않는 문제가 발생했다.<br/>
 
 <b>원인</b><br/>
-원인은 해당 라이브러리는 useLayoutEffect내부에서 droppable이 등록되는데 첫 componentDidMount에서는 실행되지만 컴포넌트가 다시 마운트될때는 실행되지 않아서 발생하는 문제였다.<br/>
+React18버전에서 StrictMode일 경우 useLayoutEffect내에서 React-beautiful-dnd의 droppable(드롭 가능한)요소가 등록되어<br/> 
+첫 componentDidMount에서는 실행되지만 이후 컴포넌트가 다시 마운팅 될때는 실행되지 않아서 발생하는 문제였습니다.<br/>
 
 <b>해결</b><br/>
 해당 문제는 React StrictMode를 제거하면 쉽게 해결 되긴하지만 올바른 방법같지는 않아서 다른방법을 찾아보았다.<br/>
@@ -158,7 +163,15 @@ export default StrictModeDroppable;
 
 <br/>
 
-## 📌한 줄 회고 (feat.작고 귀여운 나의 수익)
-> 조그마한 수익이라도 낼 수 있는 프로젝트를 만들어보니 개발이 점점 더 흥미롭게 다가오는것 같다.
+### 월별 수익
+<img src="https://user-images.githubusercontent.com/90495580/219869119-d7f89e6b-9e27-4988-9bfb-cf16ed7866e5.png" />
 
-<img src="https://velog.velcdn.com/images/llama/post/0fc89b10-769f-4fd7-9975-8d75836c2983/image.png" />
+<br/>
+
+### 실적 리포트
+<img src="https://user-images.githubusercontent.com/90495580/219851906-23578c32-225b-43c8-94ee-ba1a3cc7054a.png" />
+
+<br/>
+
+## 📌한 줄 회고
+> 조그마한 수익이라도 낼 수 있는 프로젝트를 만들어보니 개발이 점점 더 흥미롭게 다가오는것 같다.
